@@ -1,0 +1,8 @@
+.background {
+    background-image: url("/home/mora/Escritorio/PI-Countries/client/src/images/Perfil universidad 2020.png");
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}

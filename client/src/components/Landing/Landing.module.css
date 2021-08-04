@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+
+.background {
+    background-image: url("/home/mora/Escritorio/PI-Countries/client/src/images/backgroundLandin.png");
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}
+
+.btn {
+    width: 250px;
+    height: 80px;
+    margin-top: 405px;
+    margin-left: 900px;
+    text-align: center;
+    font-family: Titillium Web;
+    font-weight: bold;
+    font-size: xx-large;
+    border-radius: 40px;
+    color: rgb(100, 94, 116);
+    background-color: white(47, 30, 139, 0.253);
+    border-color: rgba(100, 94, 116, 0.692);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
