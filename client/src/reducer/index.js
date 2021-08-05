@@ -1,5 +1,5 @@
 const initialState = {
-    countries: []
+    countries: [],
 }
 
 const reducer = (state = initialState, action) => {
