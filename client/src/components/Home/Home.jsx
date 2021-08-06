@@ -6,10 +6,11 @@ import style from "./Home.module.css";
 const Home = () => {
     const countries = useSelector((state) => state.countries);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(9);
+    const [itemsPerPage, setItemsPerPage] = useState(8);
     const [limitPage, setLimitPage] = useState(10);
     const [maxLimitPage, setMaxLimitPage] = useState(10);
     const [minLimitPage, setMinLimitPage] = useState(0);
+    const filterCountries = useSelector((state) => state.filterCountries);
     
     const handleClickPage = (event) => {
         setCurrentPage(Number(event.target.id));
@@ -22,7 +23,7 @@ const Home = () => {
 
     const lastItem = currentPage * itemsPerPage;
     const firstItem = lastItem - itemsPerPage;
-    const currentItems = countries?.slice(firstItem, lastItem);
+    const currentItems = filterCountries?.slice(firstItem, lastItem);
 
     const renderPages = pages.map((number) => {
         if (number < maxLimitPage +1 && number > minLimitPage) {
@@ -63,10 +64,10 @@ const Home = () => {
                 {
                     countries?.map((c) => {
                         return (
-                            <div>
-                                <img src={c.flag_image} alt = "Not Found"/>
+                            <div className={style.cards}>
+                                <img src={c.flag_image} className={style.img} alt = "Not Found"/>
                                 <h3>{c.name}</h3>
-                                <p>{c.region}</p>
+                                <p>{c.continent}</p>
                             </div>
                         )
                     })
