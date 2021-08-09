@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { showCountries } from "../../actions";
 import style from "./Home.module.css";
 
@@ -64,11 +65,13 @@ const Home = () => {
                 {
                     countries?.map((c) => {
                         return (
-                            <div className={style.cards}>
-                                <img src={c.flag_image} className={style.img} alt = "Not Found"/>
-                                <h3>{c.name}</h3>
-                                <p>{c.continent}</p>
-                            </div>
+                            <Link to ={`/home/countryDetail/${c.id}`}>
+                                <div className={style.cards}>
+                                    <img src={c.flag_image} className={style.img} alt = "Not Found"/>
+                                    <h3>{c.name}</h3>
+                                    <p>{c.continent}</p>
+                                </div>
+                            </Link>
                         )
                     })
                 }

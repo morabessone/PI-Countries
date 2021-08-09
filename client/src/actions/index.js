@@ -92,3 +92,17 @@ export function orderPopMin() {
         })
     }
 }
+
+export function getDetail(id) {
+    console.log("action")
+    console.log(id)
+    return async function(dispatch) {
+        return await axios.get("http://localhost:3001/countries/" + id)
+        .then(resp => {
+            dispatch({
+                type: "GET_DETAIL",
+                payload: resp.data
+            })
+        })
+    }
+}

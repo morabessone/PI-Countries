@@ -1,6 +1,7 @@
 const initialState = {
     countries: [],
-    filterCountries: []
+    filterCountries: [],
+    countryDetail: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -35,6 +36,12 @@ const reducer = (state = initialState, action) => {
                 return {
                     ...state,
                     filterCountries: action.payload
+                }
+            case "GET_DETAIL":
+                console.log("reducer")
+                return {
+                    ...state,
+                    countryDetail: action.payload
                 }
     
         default:
