@@ -5,6 +5,7 @@ import Landing from './components/Landing/Landing';
 import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import countryDetail from './components/CountryDetail/CountryDetail';
+import CreateActivity from './components/CreateActivity/CreateActivity';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Route exact path = "/" component = {Landing}/>
       <Route path = "/" component = {NavBar}/>
       <Route exact path = "/home" component = {Home}/>
-      <Route exact path = "/home/countryDetail/:name" component = {countryDetail}/>
+      <Route exact path = "/countryDetail/:name" component = {countryDetail}/>
+      <Route exact path = "/createActivity" component = {CreateActivity}/>
     </React.Fragment>
   );
 }

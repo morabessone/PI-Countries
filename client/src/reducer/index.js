@@ -1,7 +1,8 @@
 const initialState = {
     countries: [],
     filterCountries: [],
-    countryDetail: []
+    countryDetail: [],
+    activities: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -42,6 +43,11 @@ const reducer = (state = initialState, action) => {
                 return {
                     ...state,
                     countryDetail: action.payload
+                }
+            case "GET_ACTIVITIES":
+                return {
+                    ...state,
+                    activities: action.payload
                 }
     
         default:

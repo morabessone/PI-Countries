@@ -106,3 +106,16 @@ export function getDetail(id) {
         })
     }
 }
+
+export function getActivities() {
+    return async function(dispatch) {
+        return await axios.get("http://localhost:3001/searchActiv")
+        .then(resp => {
+            dispatch({
+                type: "GET_ACTIVITIES",
+                payload: resp.data
+            })
+        })
+        
+    }
+}

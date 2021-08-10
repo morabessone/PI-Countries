@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Order from "../Order/Order";
 import SearchBar from "../SearchBar/SearchBar"
 
@@ -18,6 +18,11 @@ const NavBar = () => {
             <button onClick={refresh}> Home </button>                    
             <SearchBar />
             <Order />
+            <NavLink to = "/createActivity">
+                <button>
+                    Create activity
+                </button>
+            </NavLink>
         </div>
     )
 }

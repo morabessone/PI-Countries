@@ -18,15 +18,19 @@ router.get("/", async (req, res, next) => {
             //     res.send(response);
             // })
             api.data.forEach(async (e) => {
-                await Country.create({
-                    name: e.name,
-                    id: e.alpha3Code,
-                    flag_image: e.flag,
-                    continent: e.region,
-                    capital: e.capital,
-                    sub_region: e.subregion,
-                    area: e.area,
-                    population: e.population,
+                await Country.findOrCreate({
+                    where: {
+                        name: e.name,
+                        id: e.alpha3Code,
+                        flag_image: e.flag,
+                        continent: e.region,
+                        capital: e.capital,
+                        sub_region: e.subregion,
+                        area: e.area,
+                        population: e.population,
+                    }, defaults: {
+                        name: e.name
+                    }
                 })
             })
             let allData = await Country.findAll({
@@ -41,8 +45,8 @@ router.get("/", async (req, res, next) => {
                 }
             })
             return res.send(allData);
-        } catch (error) {
-            next(error);
+        } catch (err) {
+            next(err);
         }
         console.log("entre a allData")
         console.log(allData);
@@ -63,9 +67,9 @@ router.get("/", async (req, res, next) => {
             console.log("estoy respondiendo bien")
             console.log(database);
             return res.send(database);
-        } catch (error) {
-            next(error);
-            console.log(error);
+        } catch (err) {
+            next(err);
+            console.log(err);
         }
     }
 })
@@ -85,15 +89,15 @@ router.get("/:id", async (req, res, next) => {
                 }
             })
             .then(resp => res.send(resp));
-        } catch (error) {
-            next(error);
+        } catch (err) {
+            next(err);
         }
     //     try {
     //         const countries = await axios.get(`${API_URL}`);
     //         const country = countries.data.find(c => c.alpha3Code == id);
     //         res.json(country);
-    //     } catch (error) {
-    //         next(error);
+    //     } catch (err) {
+    //         next(err);
     //     }
     // } else {
     //     try {
@@ -107,8 +111,8 @@ router.get("/:id", async (req, res, next) => {
     //             }
     //         })
     //         .then(resp => res.send(resp));
-    //     } catch (error) {
-    //         next(error);
+    //     } catch (err) {
+    //         next(err);
     //     }
     }
 })

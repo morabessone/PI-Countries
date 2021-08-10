@@ -65,7 +65,7 @@ const Home = () => {
                 {
                     countries?.map((c) => {
                         return (
-                            <Link to ={`/home/countryDetail/${c.id}`}>
+                            <Link to ={`/countryDetail/${c.id}`}>
                                 <div className={style.cards}>
                                     <img src={c.flag_image} className={style.img} alt = "Not Found"/>
                                     <h3>{c.name}</h3>
