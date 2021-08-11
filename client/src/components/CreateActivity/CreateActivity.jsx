@@ -33,13 +33,14 @@ const CreateActivity = () => {
         season: "",
         countries: [],
     });
-
+    console.log(input)
+    
     const [errors, setErrors] = useState({});
-
+    
     const countries = useSelector((state) => state.countries);
-
+    
     const dispatch = useDispatch();
-
+    
     const handleInputChange = (e) => {
         setInput({
             ...input,
@@ -57,10 +58,16 @@ const CreateActivity = () => {
                 [e.target.name]:[...input.countries, e.target.value]
             });
         }
+        // setInput({
+        //     ...input,
+        //     [e.target.name]:
+        //     [...input.countries, e.target.value]
+        // })
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(errors)
         if (!errors.name && !errors.difficulty && !errors.duration && !errors.season) {
             alert("The activity has been created successfully");
             await axios.post("http://localhost:3001/activity", input);
@@ -72,7 +79,7 @@ const CreateActivity = () => {
                 countries: [],
             })
         } else {
-            return alert("Something went wrong. Please try again");
+            alert("Something went wrong. Please try again");
         }
     };
 
@@ -98,8 +105,8 @@ const CreateActivity = () => {
         <div>
             <h1>CREATE ACTIVITY</h1>
             <form>
-                <input placeholder="Insert name..." onChange={handleInputChange}/>
-                <select name="Difficulty" onChange={handleInputChange}>
+                <input name="name" placeholder="Insert name..." onChange={handleInputChange}/>
+                <select name="difficulty" onChange={handleInputChange}>
                     <option disabled>Difficulty</option>
                     <option>1</option>
                     <option>2</option>
@@ -107,15 +114,15 @@ const CreateActivity = () => {
                     <option>4</option>
                     <option>5</option>
                 </select>                
-                <input placeholder="Insert duration..." onChange={handleInputChange}/>
-                <select name="Season" onChange={handleInputChange}>
+                <input name="duration" placeholder="Insert duration..." onChange={handleInputChange}/>
+                <select name="season" onChange={handleInputChange}>
                     <option disabled>Season</option>
                     <option>Summer</option>
                     <option>Autumn</option>
                     <option>Winter</option>
                     <option>Spring</option>
                 </select>      
-                <select onChange={handleInputCountries}>    
+                <select name="countries" onChange={handleInputCountries}>    
                     <option disabled>Country</option>
                     {
                         countries?.map((c) => {

@@ -25,7 +25,7 @@ router.post("/", async (req, res, next) => {
             }
         })
         console.log(created);
-        await act.setCountries(activity.country)
+        await act.setCountries(activity.countries)
         return res.json(act);
     } catch (err) {
         next(err);
