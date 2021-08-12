@@ -104,25 +104,29 @@ const CreateActivity = () => {
     return (
         <div>
             <h1>CREATE ACTIVITY</h1>
-            <form>
-                <input name="name" placeholder="Insert name..." onChange={handleInputChange}/>
-                <select name="difficulty" onChange={handleInputChange}>
+            <form onSubmit={handleSubmit}>
+                <input name="name" placeholder="Insert name..." value={input.name} onChange={handleInputChange}/>
+                <p>{errors.name}</p>
+                <select name="difficulty" value={input.difficulty} onChange={handleInputChange}>
                     <option disabled>Difficulty</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
-                </select>                
-                <input name="duration" placeholder="Insert duration..." onChange={handleInputChange}/>
-                <select name="season" onChange={handleInputChange}>
+                </select>            
+                <p>{errors.difficulty}</p>
+                <input name="duration" placeholder="Insert duration..." value={input.duration} onChange={handleInputChange}/>
+                <p>{errors.duration}</p>
+                <select name="season" value={input.season} onChange={handleInputChange}>
                     <option disabled>Season</option>
                     <option>Summer</option>
                     <option>Autumn</option>
                     <option>Winter</option>
                     <option>Spring</option>
-                </select>      
-                <select name="countries" onChange={handleInputCountries}>    
+                </select>     
+                <p>{errors.season}</p>
+                <select name="countries" value={input.countries} onChange={handleInputCountries}>    
                     <option disabled>Country</option>
                     {
                         countries?.map((c) => {
@@ -133,7 +137,8 @@ const CreateActivity = () => {
                             )
                         })
                     }
-                </select>          
+                </select>    
+                <p>{errors.countries}</p>
                 <div>
                     {
                         input.countries?.map(e => (

@@ -7,7 +7,6 @@ const CDetail = ({match}) => {
     const {name} = match.params;
     const aCountry = useSelector(state => state.countryDetail);
     console.log(name)
-    console.log(aCountry)
 
     const dispatch = useDispatch();
 
@@ -28,6 +27,13 @@ const CDetail = ({match}) => {
                         <p>Subregion: {aCountry[0].sub_region}</p>
                         <p>Area: {aCountry[0].area} km²</p>
                         <p>Population: {aCountry[0].population}</p>
+                        <p>Activities:</p>
+
+                            {
+                                aCountry[0].activities?.map(e => (
+                                    <p>{e.name}</p>
+                                ))
+                            }
 
                     </div>
             </div>

@@ -119,3 +119,21 @@ export function getActivities() {
         
     }
 }
+
+export function filterByContinent(pay) {
+    return function(dispatch) {
+        dispatch({
+            type: "FILTER_BY_CONTINENT",
+            payload: pay
+        })
+    }
+}
+
+export function filterByActivity(pay) {
+    return function(dispatch) {
+        dispatch({
+            type: "FILTER_BY_ACTIVITY",
+            payload: pay
+        })
+    }
+}

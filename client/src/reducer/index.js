@@ -49,6 +49,19 @@ const reducer = (state = initialState, action) => {
                     ...state,
                     activities: action.payload
                 }
+            case "FILTER_BY_CONTINENT":
+                return {
+                    ...state,
+                    filterCountries: state.countries.filter(e => e.continent === action.payload)
+                }
+            case "FILTER_BY_ACTIVITY":
+                return {
+                    ...state,
+                    filterCountries: state.countries.filter(e => {
+                        const act = e.activities.map((a) => String(a.id));
+                        return act.includes(action.payload)
+                    })
+                }
     
         default:
             return {
