@@ -82,7 +82,7 @@ router.get("/:id", async (req, res, next) => {
                 where: {id: id},
                 include: {
                     model: Activity,
-                    attributes: ["name", "id"],
+                    attributes: ["name", "id", "difficulty", "duration", "season"],
                     through: {
                         attributes: []
                     }

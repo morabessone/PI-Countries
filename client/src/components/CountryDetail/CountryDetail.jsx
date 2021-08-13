@@ -16,6 +16,7 @@ const CDetail = ({match}) => {
 
     function renderDetail(aCountry) {
         console.log("entre a render")
+        console.log(aCountry[0].activities)
         return (
             <div>
                     <div>
@@ -30,8 +31,14 @@ const CDetail = ({match}) => {
                         <p>Activities:</p>
 
                             {
+                                
                                 aCountry[0].activities?.map(e => (
+                                    <div>
                                     <p>{e.name}</p>
+                                    <p>{e.difficulty}</p>
+                                    <p>{e.duration}</p>
+                                    <p>{e.season}</p>
+                                    </div>
                                 ))
                             }
 
