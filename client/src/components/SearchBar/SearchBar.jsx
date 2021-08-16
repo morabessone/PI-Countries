@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getByName } from "../../actions";
+import style from "./SearchBar.module.css"
+import { RiSearch2Line } from "react-icons/ri"
+
 
 
 const SearchBar = () => {
@@ -19,10 +22,10 @@ const SearchBar = () => {
     }
 
     return (
-        <div>
-            <input type="text" placeholder="Insert country..." value={search} onChange={(e) => handleChange(e)}/>ç
-            <button type="submit" onClick={(e) => handleClick(e)}>
-                Search
+        <div className={style.searchB}>
+            <input className={style.input} type="text" placeholder="Insert country..." value={search} onChange={(e) => handleChange(e)}/>
+            <button className={style.btn} type="submit" onClick={(e) => handleClick(e)}>
+                <RiSearch2Line/>
             </button>
         </div>
     )

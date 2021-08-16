@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+/* rgba(98, 144, 187, 0.664) */
+.nav {
+    height: 95px;
+    width: 100%;
+    background-color: rgba(156, 151, 194, 0.562);
+    justify-content:space-around;
+    display: flex;
+    align-items: center;    
+}
+
+.btnHome {
+    font-family: Titillium Web;
+    height: 70px;
+    width: 90px;
+    font-size: 150%;
+    border-radius: 150px;
+    background-color: rgba(106, 103, 121, 0.692);
+    border-color: rgba(255, 255, 255, 0.308);
+    color: white;
+}
+
+.btnHome:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
+
+.btnCreate {
+    font-family: Titillium Web;
+    height: 70px;
+    width: 90px;
+    font-size: 110%;
+    border-radius: 150px;
+    background-color: rgba(106, 103, 121, 0.692);
+    border-color: rgba(255, 255, 255, 0.308);
+    color: white;
+}
+
+.btnCreate:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}

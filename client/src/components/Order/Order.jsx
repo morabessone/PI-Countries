@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterByActivity, filterByContinent, getActivities, orderNameAZ, orderNameZA, orderPopMaj, orderPopMin } from "../../actions";
-
+import style from "./Order.module.css";
 const Order = () => {
     
     const dispatch = useDispatch();
@@ -35,12 +35,12 @@ const Order = () => {
     }, []);
 
     return (
-        <div>
-            <button onClick={(e) => orderByAZ(e)}>A-Z</button>
-            <button onClick={(e) => orderByZA(e)}>Z-A</button>
-            <button onClick={(e) => orderPopMajor(e)}>Pop: + to -</button>
-            <button onClick={(e) => orderPopMinor(e)}>Pop: - to +</button>
-            <select name="continent" onChange={filterBy}>
+        <div className={style.divStyle}>
+            <button className={style.btnAz} onClick={(e) => orderByAZ(e)}>A-Z</button>
+            <button className={style.btnZa} onClick={(e) => orderByZA(e)}>Z-A</button>
+            <button className={style.btnToMaj} onClick={(e) => orderPopMajor(e)}>Pop + to -</button>
+            <button className={style.btnToMin} onClick={(e) => orderPopMinor(e)}>Pop - to +</button>
+            <select className={style.selCont} name="continent" onChange={filterBy}>
                 <option disabled>Continent</option>
                 <option value="Africa">Africa</option>
                 <option value="Americas">Americas</option>
@@ -48,7 +48,7 @@ const Order = () => {
                 <option value="Europe">Europe</option>
                 <option value="Oceania">Oceania</option>
             </select>
-            <select name="activity" onChange={filterByAct}>
+            <select className={style.selAct} name="activity" onChange={filterByAct}>
                 {
                     activs?.map((e) => 
                         <option value={e.id} key={e.id}>{e.name}</option>

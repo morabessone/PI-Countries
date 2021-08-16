@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { showCountries } from "../../actions";
+import NavBar from "../NavBar/NavBar";
 import style from "./Home.module.css";
 
 const Home = () => {
@@ -68,7 +69,7 @@ const Home = () => {
 
     function renderData(countries) {
         return (
-            <div>
+            <div className={style.contenedor}>
                 {
                     countries?.map((c) => {
                         return (
@@ -88,14 +89,15 @@ const Home = () => {
     console.log(countries);
     return (
         <div className = {style.background}>
+            <NavBar />
            {renderData(currentItems)}
            <ul className={style.pagination}>
            <li>
-               <button onClick={handlePrev} disabled={currentPage === pages[0] ? true : false}>Prev</button>
+               <button className={style.paginationBtn} onClick={handlePrev} disabled={currentPage === pages[0] ? true : false}>Prev</button>
            </li>
            {renderPages}
            <li>
-               <button onClick={handleNext} disabled={currentPage === pages[pages.length - 1] ? true : false}>Next</button>
+               <button className={style.paginationBtn} onClick={handleNext} disabled={currentPage === pages[pages.length - 1] ? true : false}>Next</button>
            </li>
            </ul>
         </div>

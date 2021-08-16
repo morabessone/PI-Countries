@@ -11,7 +11,7 @@ function App() {
   return (
     <React.Fragment>
       <Route exact path = "/" component = {Landing}/>
-      <Route path = "/" component = {NavBar}/>
+      {/* <Route path = "/" component = {NavBar}/> */}
       <Route exact path = "/home" component = {Home}/>
       <Route exact path = "/countryDetail/:name" component = {countryDetail}/>
       <Route exact path = "/createActivity" component = {CreateActivity}/>

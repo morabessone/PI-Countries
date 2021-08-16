@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+
+.divStyle {
+    align-items: center;
+    justify-content:space-around;
+}
+
+.btnAz {
+    margin: 4px;
+    font-family: Titillium Web;
+    height: 40px;
+    width: 90px;
+    font-size: 90%;
+    border-radius: 150px;
+    background-color: rgba(106, 103, 121, 0.692);
+    border-color: rgba(255, 255, 255, 0.308);
+    color: white;
+}
+
+.btnZa {
+    margin: 4px;
+    font-family: Titillium Web;
+    height: 40px;
+    width: 90px;
+    font-size: 90%;
+    border-radius: 150px;
+    background-color: rgba(106, 103, 121, 0.692);
+    border-color: rgba(255, 255, 255, 0.308);
+    color: white;
+}
+
+.btnToMin {
+    margin: 4px;
+    font-family: Titillium Web;
+    height: 40px;
+    width: 90px;
+    font-size: 90%;
+    border-radius: 150px;
+    background-color: rgba(106, 103, 121, 0.692);
+    border-color: rgba(255, 255, 255, 0.308);
+    color: white;
+}
+
+.btnToMaj {
+    margin: 4px;
+    font-family: Titillium Web;
+    height: 40px;
+    width: 90px;
+    font-size: 90%;
+    border-radius: 150px;
+    background-color: rgba(106, 103, 121, 0.692);
+    border-color: rgba(255, 255, 255, 0.308);
+    color: white;
+}
+
+.selCont {
+    margin: 4px;
+    font-family: Titillium Web;
+    height: 40px;
+    width: 90px;
+    font-size: 90%;
+    border-radius: 150px;
+    background-color: rgba(106, 103, 121, 0.692);
+    border-color: rgba(255, 255, 255, 0.308);
+    color: white;
+}
+
+.selAct {
+    margin: 4px;
+    font-family: Titillium Web;
+    height: 40px;
+    width: 90px;
+    font-size: 90%;
+    border-radius: 150px;
+    background-color: rgba(106, 103, 121, 0.692);
+    border-color: rgba(255, 255, 255, 0.308);
+    color: white;
+}
+
+.btnAz:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
+
+.btnZa:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
+
+.btnToMaj:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
+
+.btnToMin:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
+
+.selAct:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
+
+.selCont:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
+
+.selOp {
+    background-color: rgba(125, 127, 241, 0.493);
+}
+

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Order from "../Order/Order";
 import SearchBar from "../SearchBar/SearchBar"
-
+import style from "./NavBar.module.css";
 
 const NavBar = () => {
     const refresh = () => {
@@ -14,12 +14,12 @@ const NavBar = () => {
         }
     }
     return (
-        <div>
-            <button onClick={refresh}> Home </button>                    
+        <div className={style.nav}>
+            <button className={style.btnHome} onClick={refresh}> Home </button>                    
             <SearchBar />
             <Order />
             <NavLink to = "/createActivity">
-                <button>
+                <button className={style.btnCreate}>
                     Create activity
                 </button>
             </NavLink>

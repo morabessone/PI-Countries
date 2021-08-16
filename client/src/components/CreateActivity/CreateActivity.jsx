@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { showCountries } from "../../actions";
+import style from "./CreateActivity.module.css";
+import NavBar from "../NavBar/NavBar";
 
 export function validate(input) {
 
@@ -102,32 +104,34 @@ const CreateActivity = () => {
     }
 
     return (
-        <div>
-            <h1>CREATE ACTIVITY</h1>
+        <div className={style.contenedor}>
+            <NavBar/>
+            <h1 className={style.text}>CREATE ACTIVITY</h1>
+            <div className={style.cont}> 
             <form onSubmit={handleSubmit}>
-                <input name="name" placeholder="Insert name..." value={input.name} onChange={handleInputChange}/>
-                <p>{errors.name}</p>
-                <select name="difficulty" value={input.difficulty} onChange={handleInputChange}>
-                    <option disabled>Difficulty</option>
+                <input className={style.input} name="name" placeholder="Insert name..." value={input.name} onChange={handleInputChange}/>
+                <p className={style.err}>{errors.name}</p>
+                <select className={style.input} name="difficulty" value={input.difficulty} onChange={handleInputChange}>
+                    <option value="" disabled>Difficulty</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                 </select>            
-                <p>{errors.difficulty}</p>
-                <input name="duration" placeholder="Insert duration..." value={input.duration} onChange={handleInputChange}/>
-                <p>{errors.duration}</p>
-                <select name="season" value={input.season} onChange={handleInputChange}>
-                    <option disabled>Season</option>
+                <p className={style.err}>{errors.difficulty}</p>
+                <input className={style.input} name="duration" placeholder="Insert duration..." value={input.duration} onChange={handleInputChange}/>
+                <p className={style.err}>{errors.duration}</p>
+                <select className={style.input} name="season" value={input.season} onChange={handleInputChange}>
+                <option value="" disabled>Season</option>
                     <option>Summer</option>
                     <option>Autumn</option>
                     <option>Winter</option>
                     <option>Spring</option>
                 </select>     
-                <p>{errors.season}</p>
-                <select name="countries" value={input.countries} onChange={handleInputCountries}>    
-                    <option disabled>Country</option>
+                <p className={style.err}>{errors.season}</p>
+                <select className={style.input} name="countries" value={input.countries} onChange={handleInputCountries}>    
+                <option value="" disabled>Countries</option>
                     {
                         countries?.map((c) => {
                             return (
@@ -138,8 +142,8 @@ const CreateActivity = () => {
                         })
                     }
                 </select>    
-                <p>{errors.countries}</p>
-                <div>
+                <p className={style.err}>{errors.countries}</p>
+                <div className={style.text1}>
                     {
                         input.countries?.map(e => (
                             <p id={e}>
@@ -149,9 +153,10 @@ const CreateActivity = () => {
                     }
                 </div>
                 <div>
-                    <button type="submit" onClick={handleSubmit}>Create!</button>
+                    <button className={style.btn} type="submit" onClick={handleSubmit}>Create!</button>
                 </div>
             </form>
+            </div>
         </div>
     )
 

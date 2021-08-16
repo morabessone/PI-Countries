@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail } from "../../actions";
+import NavBar from "../NavBar/NavBar";
+import style from "./CountryDetail.module.css";
 
 const CDetail = ({match}) => {
 
@@ -18,9 +20,10 @@ const CDetail = ({match}) => {
         console.log("entre a render")
         console.log(aCountry[0].activities)
         return (
-            <div>
-                    <div>
-                        <img src={aCountry[0].flag_image} alt = "Not Found"/>
+            <div className={style.background}>
+                <NavBar/>
+                    <div className={style.cards}>
+                        <img className={style.img} src={aCountry[0].flag_image} alt = "Not Found"/>
                         <h3>{aCountry[0].name}</h3>
                         <p>Continent: {aCountry[0].continent}</p>
                         <p>ID: {aCountry[0].id}</p>

@@ -1,0 +1,28 @@
+.background {
+    background-image: url("/home/mora/Escritorio/PI-Countries/client/src/images/Perfil universidad 2020.png");
+    height: 100vh;
+    background-size: cover;
+}
+
+.cards {
+    display: inline-block;
+    justify-content: space-around;
+    width: 600px;
+    height: 700px;
+    text-align: center;
+    background-color: rgba(106, 103, 121, 0.301);
+    border-radius: 5%;
+    margin: 10px;
+    margin-top: 40px;
+    margin-left: 600px;
+    color: white;
+    font-family: Titillium Web;
+    font-size: 20px;
+}
+
+.img {
+    height: 200px;
+    width: 250px;
+    border-radius: 20%;
+    margin-top: 26px;
+}

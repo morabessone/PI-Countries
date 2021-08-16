@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+
+
+.searchB {
+    display: flex;
+    border: none;
+}
+
+.input {
+    font-family: Titillium Web;
+    height: 35px;
+    border-radius: 100px;
+    width: 200px;
+    font-size: 15px;
+    border-color: rgba(255, 255, 255, 0.308);
+}
+
+.btn {
+    font-family: Titillium Web;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    font-size: 15px;
+    background-color: white;
+    font-size: 18px;
+    border-color: rgba(255, 255, 255, 0.308);
+}
+
+.btn:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
+
+.input:hover {
+    box-shadow: 0 5px 10px rgb(196, 192, 192);
+}
