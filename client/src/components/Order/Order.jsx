@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterByActivity, filterByContinent, getActivities, orderNameAZ, orderNameZA, orderPopMaj, orderPopMin } from "../../actions";
 import style from "./Order.module.css";
@@ -32,7 +32,9 @@ const Order = () => {
     }
     useEffect(() => {
         dispatch(getActivities())
-    }, []);
+    }, 
+    // eslint-disable-next-line
+    []);
 
     return (
         <div className={style.divStyle}>

@@ -14,7 +14,9 @@ const CDetail = ({match}) => {
 
     useEffect(() => {
         dispatch(getDetail(name));
-    }, [])
+    }, 
+    // eslint-disable-next-line
+    [])
 
     function renderDetail(aCountry) {
         console.log("entre a render")
@@ -32,15 +34,11 @@ const CDetail = ({match}) => {
                         <p>Area: {aCountry[0].area} km²</p>
                         <p>Population: {aCountry[0].population}</p>
                         <p>Activities:</p>
-
                             {
                                 
                                 aCountry[0].activities?.map(e => (
-                                    <div>
-                                    <p>{e.name}</p>
-                                    <p>{e.difficulty}</p>
-                                    <p>{e.duration}</p>
-                                    <p>{e.season}</p>
+                                    <div className={style.txt}>
+                                    <p>Name: {e.name}, Difficulty: {e.difficulty}, Duration: {e.duration}, Season: {e.season}</p>
                                     </div>
                                 ))
                             }

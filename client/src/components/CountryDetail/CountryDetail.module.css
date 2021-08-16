@@ -8,12 +8,12 @@
     display: inline-block;
     justify-content: space-around;
     width: 600px;
-    height: 700px;
+    height: 740px;
     text-align: center;
     background-color: rgba(106, 103, 121, 0.301);
     border-radius: 5%;
     margin: 10px;
-    margin-top: 40px;
+    margin-top: 15px;
     margin-left: 600px;
     color: white;
     font-family: Titillium Web;
@@ -25,4 +25,8 @@
     width: 250px;
     border-radius: 20%;
     margin-top: 26px;
+}
+
+.txt{ 
+    font-family: Titillium Web;
 }

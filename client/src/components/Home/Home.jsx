@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { showCountries } from "../../actions";
 import NavBar from "../NavBar/NavBar";
+// import Pagination from "../Pagination/Pagination";
 import style from "./Home.module.css";
 
 const Home = () => {
@@ -10,8 +11,10 @@ const Home = () => {
     //seteo mi page en 1 para que empuece ahi
     const [currentPage, setCurrentPage] = useState(1);
     // seteo la cantidad de countries a mostrar en mi home
+    // eslint-disable-next-line
     const [itemsPerPage, setItemsPerPage] = useState(8);
     // sete0 mi limite en 10 para que muestre: 1/2/3/4/5/6/7/8/9/10
+    // eslint-disable-next-line
     const [limitPage, setLimitPage] = useState(10);
     // el maximo de paginas va a ser 10
     const [maxLimitPage, setMaxLimitPage] = useState(10);
@@ -49,7 +52,9 @@ const Home = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(showCountries())
-    }, []);
+    }, 
+    // eslint-disable-next-line
+    []);
 
     const handleNext = () => {
         setCurrentPage(currentPage + 1);
@@ -102,6 +107,48 @@ const Home = () => {
            </ul>
         </div>
     )
+
+    // const dispatch = useDispatch();
+
+    // useEffect(() => {
+    //     dispatch(showCountries());
+    // }, [])
+
+    // const allCountries = useSelector(state => state.filterCountries);
+    // console.log(allCountries)
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [countriesPerPage, setCountriesPerPage] = useState(8);
+    // const indexOfLastCountrie = currentPage * countriesPerPage;
+    // const indexOfFirstCountrie = indexOfLastCountrie - countriesPerPage;
+    // const currentCountries = allCountries.slice(indexOfFirstCountrie, indexOfLastCountrie);
+    // const paginado = (pageNumber) => {
+    //     setCurrentPage(pageNumber);
+    // }
+
+    // const handleClick = (e) => {
+    //     e.preventDefault();
+    //     dispatch(showCountries());
+    // }
+
+    // return (
+    //     <div>
+    //         {
+    //             currentCountries?.map((c) => (
+    //                 <Link to ={`/countryDetail/${c.id}`}>
+    //                     <div className={style.cards}>
+    //                         <img src={c.flag_image} className={style.img} alt = "Not Found"/>
+    //                         <h3>{c.name}</h3>
+    //                         <p>{c.continent}</p>
+    //                     </div>
+    //                 </Link>
+    //             ))
+    //         }
+    //         <Pagination countriesPerPage={countriesPerPage} allCountries={allCountries.length} paginado={paginado} />
+
+    //     </div>
+
+    // )
+
 }
 
 export default Home;

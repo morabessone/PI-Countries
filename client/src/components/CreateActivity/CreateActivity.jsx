@@ -87,9 +87,11 @@ const CreateActivity = () => {
 
     useEffect(() => {
         dispatch(showCountries());
-    }, []);
+    }, 
+    // eslint-disable-next-line
+    []);
 
-    const activ = useSelector((state) => state.activities);
+    // const activ = useSelector((state) => state.activities);
 
     const showAcitivities = (arr) => {
         let names = [];
